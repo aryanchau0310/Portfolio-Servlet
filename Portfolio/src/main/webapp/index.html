@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aryan's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Aryan</h1>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="right-icons">
+        <button class="mode-toggle" onclick="toggleDarkMode()">🌙</button>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <h2>Hello, I'm Aryan Vijay Chaudhary</h2>
+    <p>I am a <span id="typing-text"></span></p>
+    <a href="#contact" class="btn">Hire Me</a>
+    <a href="Aryan-resume.pdf" download class="btn secondary">Download Resume</a>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p> A passionate and dedicated Software Developer with a strong foundation in Java, Web Development, and MySQL. I specialize in building responsive, scalable, and efficient applications. I love turning complex problems into simple, elegant solutions through clean code and smart design.
+
+Currently, I'm enhancing my skills through certifications in Java Full Stack Development and Selenium Testing, while also exploring advanced technologies like Spring Boot, React, Angular, Hibernate, and AI/ML.
+
+I’ve built projects like a Vehicle Rental System using HTML, CSS, Java Servlet, and MySQL, showcasing my ability to develop full-stack applications. I'm always eager to learn, grow, and contribute to impactful software products.
+
+When I'm not coding, you’ll find me exploring new tech trends, improving my communication skills, or working on personal development goals</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML/CSS</li>
+      <li>JavaScript</li>
+      <li>Java</li>
+      <li>Spring Boot</li>
+      <li>MySQL</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+     <div class="project-grid">
+    <a href="project1.html" class="project-card">
+  <h3>Vehicle Rental System</h3>
+  <p>Made with HTML, CSS, Java Servlet, and MySQL.</p>
+</a>
+
+<a href="project2.html" class="project-card">
+  <h3>Shop Management Cart Page</h3>
+  <p>Interactive cart page using Servlet & MySQL.</p>
+</a>
+</div>
+  </section>
+
+ <section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <form action="ContactServlet" method="post" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+
+    <div class="contact-info">
+    <p>Phone: 8879735434</p>
+    <p>Email: aryanchaudhary4002@gmail.com</p>
+  </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Aryan Vijay Chaudhary. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

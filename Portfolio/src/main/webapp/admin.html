@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    input[type="text"], textarea, input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+    @media (max-width: 768px) {
+      .section {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Admin Dashboard</h1>
+
+  <!-- Section: Add Project -->
+  <div class="section">
+    <h2>Add New Project</h2>
+    <form id="projectForm" method="POST" action="AddProjectServlet" enctype="multipart/form-data">
+      <input type="text" name="title" placeholder="Project Title" required>
+      <input type="text" name="technologies" placeholder="Technologies Used (HTML, CSS, JavaScript)" required>
+      <textarea name="description" placeholder="Project Description" required></textarea>
+      <input type="file" name="image" accept="image/*" required>
+      <button type="submit">Add Project</button>
+    </form>
+  </div>
+
+  <!-- Section: Contact Messages -->
+  <div class="section">
+    <h2>Contact Messages</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody id="contactTableBody">
+    <!-- Filled via JavaScript -->
+  </tbody>
+</table>
+
+  </div>
+
+  <!-- Section: Edit About Me -->
+  <div class="section">
+    <h2>Edit "About Me"</h2>
+    <form id="aboutForm" method="POST" action="UpdateAboutServlet">
+      <textarea name="aboutContent" rows="6" placeholder="Update About Me..." required></textarea>
+      <button type="submit">Update About Me</button>
+    </form>
+  </div>
+
+</body>
+<script>
+  window.onload = function () {
+    fetch("GetcontactServlet")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("contactTableBody").innerHTML = data;
+      })
+      .catch(error => console.error("Error fetching contacts:", error));
+  };
+</script>
+
+</html>
